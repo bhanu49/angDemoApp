@@ -1,0 +1,13 @@
+<h2>Recipe</h2>
+<div class="row">
+  <div class="col-md-5">
+    <app-recipe-list (selectedRecipe) = "selRes = $event"></app-recipe-list>
+    
+  </div>
+  <div class="col-md-7">
+      <app-recipe-detail *ngIf="selRes; else info" [recipe] = 'selRes'></app-recipe-detail>
+      <ng-template>
+          <p #info>Select something</p>
+        </ng-template>
+    </div>
+</div>
